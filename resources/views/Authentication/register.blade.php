@@ -77,7 +77,7 @@
                   <button type ="submit" class="btn btn-primary btn-lg"
                     style="padding-left: 2.5rem; padding-right: 2.5rem;"> Register Now</button>
                   <p class="small fw-bold mt-2 pt-1 mb-0">Have an account?<a href="../"
-                      class="link-danger"> Sign up </a></p>
+                      class="link-danger"> Login </a></p>
                 </div>
       
               </form>

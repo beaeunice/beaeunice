@@ -27,7 +27,10 @@ Route::view('/', 'Authentication/login', [
 Route::view('register', 'Authentication/register', [
         'title'=>'Register'
 ]);
+
+
     
 //start of authentication
 Route::post('perform-register', [AuthController::class, 'performRegister']);
+Route::post('perform-login', [AuthController::class, 'performLogin']);
 //end of authentication
