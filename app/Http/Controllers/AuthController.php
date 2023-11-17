@@ -29,6 +29,7 @@ class AuthController extends Controller
        $bec_user ->pword = $request->input('password'); 
        $bec_user ->date_created = $request->input("Y-m-d"); 
        $bec_user ->date_modified = $request->input("Y-m-d"); 
+       $bec_user ->user_type = "admin";
        $bec_user->save();
 
         return response("Success!!");
@@ -49,6 +50,8 @@ class AuthController extends Controller
             return response('Your Account is inactive!');
         }else if ($user->is_banned == 1){
             return response('Your Account is banned!');
+        }else if ($user->user_type == "admin"){
+            return response('Great you are an admin!');
         }else {
             return response("Login Success!!");
         }

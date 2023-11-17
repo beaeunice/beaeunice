@@ -41,13 +41,13 @@
       
                 <!-- Email input -->
                 <div class="form-outline mb-4">
-                  <input type="text" id="form3Example3" name = "reg_full_name" class="form-control form-control-lg"
+                  <input value = "{{old('reg_full_name')}}" input type="text" id="form3Example3" name = "reg_full_name" class="form-control form-control-lg"
                     placeholder="Enter Full name" />
                   <label class="form-label" for="form3Example3">Full name</label>
                 </div>
 
                 <div class="form-outline mb-4">
-                  <input type="text" id="form3Example3" name = "reg_email" class="form-control form-control-lg"
+                  <input value = "{{old('reg_email')}}"input type="text" id="form3Example3" name = "reg_email" class="form-control form-control-lg"
                     placeholder="Enter Email Address" />
                   <label class="form-label" for="form3Example3">Email Address</label>
                 </div>
