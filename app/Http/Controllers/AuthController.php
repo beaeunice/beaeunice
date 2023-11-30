@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\bec_user;
+use App\Mail\SendVerificationMailer;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Mail;
 
 class AuthController extends Controller
 {
@@ -56,4 +59,23 @@ class AuthController extends Controller
             return response("Login Success!!");
         }
     }
+    function showNewPass(Request $request){
+        $request->validate([ 
+         'email'  => 'required | email'
+        ]);
+        $otpcode = random_int(000000, 999999);
+        Mail::to($request->input('email'))->send(new SendVerificationMailer());
+        Session::put('reset_otp_code', $otpcode);
+        return view('Authentication/new-password',[
+            'title', 'Enter New Password'
+        ]);    
+     }
+
+     function changePass(Request $request){
+        $request->validate([ 
+         'otp'  => 'required',
+         'password'  => 'required | max:50 | min: 8 | confirmed',
+         'password_confirmation'  => 'required'
+        ]);  
+     }
 }
