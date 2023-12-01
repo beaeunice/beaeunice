@@ -13,7 +13,7 @@
             <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
               <form action='change-pass' method="POST">
                 @csrf
-                <h1 align-style="center" text-style= class="lead fw-normal mb-0 me-3">Enter New Password</h1>
+                <h1 align-style="center" class="lead fw-normal mb-0 me-3">Enter New Password</h1>
                
                 <br>
                 <br>
