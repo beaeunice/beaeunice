@@ -33,7 +33,12 @@ Route::view('register', 'Authentication/register', [
 Route::view('forgot-password', 'Authentication.forgot-password', [
     'title'=>'Forgot password'
 ]);
-    
+
+Route::get('testMail', function(){
+    Mail::to('beaeunicecarpio@gmail.com')->send(new SendVerificationMailer);
+    return response('mail sent!');
+});
+
 //start of authentication
 Route::post('perform-register', [AuthController::class, 'performRegister']);
 Route::post('perform-login', [AuthController::class, 'performLogin']);
